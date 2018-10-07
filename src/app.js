@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const userController = require('./controllers/userController');
 
 const PORT = process.env.PORT || 3000;
-const MONGO_URL = 'mongodb://localhost:27018/testdb';
+const MONGO_URL = 'mongodb://db:27017/testdb';
 
 mongoose.connect(
   MONGO_URL,

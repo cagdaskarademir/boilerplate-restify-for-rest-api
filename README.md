@@ -4,24 +4,14 @@ Boilerplate of Restify for REST API
 
 ## Required
 
-- NodeJS installed
-- Docker installed for MongoDB (You can use a local MongoDB instead. Up to you.)
-
-## Set up mongodb
-
-```bash
-docker container run -d --rm --name mongo-docker -p 27018:27017 mongo:latest
-```
-
-If you'd like to store data, remove '--rm' option and add '--mount' option. Up to you.
+- Docker installed
 
 ## Let's begin
 
 ```bash
 git clone https://github.com/keidrun/boilerplate-restify-for-rest-api.git
 cd boilerplate-restify-for-rest-api
-yarn install
-yarn start
+docker-compose up
 ```
 
 ## API endpoints
