@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    image: keidrun/boilerplate-restify-for-rest-api:latest
+    container_name: my_app
+    command: yarn start
+    depends_on:
+      - db
+
+  db:
+    container_name: my_db
+    image: mongo:4.0.3

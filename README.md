@@ -1,4 +1,4 @@
-# boilerplate-restify-for-rest-api
+# boilerplate-restify-for-rest-api [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url] [![License: MIT][license-image]][license-url]
 
 Boilerplate of Restify for REST API
 
@@ -6,12 +6,19 @@ Boilerplate of Restify for REST API
 
 - Docker installed
 
-## Let's begin
+## Let's begin developing
 
 ```bash
 git clone https://github.com/keidrun/boilerplate-restify-for-rest-api.git
 cd boilerplate-restify-for-rest-api
 docker-compose up
+```
+
+## Develop with testing
+
+```bash
+docker-compose up -d
+docker exec -it my_app yarn test-watch
 ```
 
 ## API endpoints
@@ -24,7 +31,7 @@ docker-compose up
 |   PUT    |  /users/:id  | name,age,gender,email |
 |  DELETE  |  /users/:id  |           -           |
 
-## Test
+## Manual Tests
 
 ```bash
 $ curl -v -H "Accept:application/json" -H "Content-Type:application/json" -X POST -d '{"name":"Keid","age":30,"gender":"male","email":"keid@example.com"}' http://localhost:3000/users | jq
@@ -176,3 +183,10 @@ $ curl -v -H "Accept:application/json" http://localhost:3000/users | jq
   ]
 }
 ```
+
+[travis-url]: https://travis-ci.org/keidrun/boilerplate-restify-for-rest-api
+[travis-image]: https://secure.travis-ci.org/keidrun/boilerplate-restify-for-rest-api.svg?branch=master
+[depstat-url]: https://david-dm.org/keidrun/boilerplate-restify-for-rest-api
+[depstat-image]: https://david-dm.org/keidrun/boilerplate-restify-for-rest-api.svg
+[license-url]: https://opensource.org/licenses/MIT
+[license-image]: https://img.shields.io/badge/License-MIT-yellow.svg

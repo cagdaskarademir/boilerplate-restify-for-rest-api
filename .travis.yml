@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker image build -t keidrun/boilerplate-restify-for-rest-api:latest -f Dockerfile.dev .
+  - docker-compose -f docker-compose.ci.yml up --build -d
+  - docker-compose -f docker-compose.ci.yml ps
+
+script:
+  - docker container exec -it my_app yarn test --coverage

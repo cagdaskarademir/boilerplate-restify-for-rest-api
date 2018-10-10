@@ -1,10 +1,11 @@
 const restify = require('restify');
 const restifyValidator = require('restify-validator');
 const mongoose = require('mongoose');
+const keys = require('../config/keys')(process.env.NODE_ENV);
 const userController = require('./controllers/userController');
 
 const PORT = process.env.PORT || 3000;
-const MONGO_URL = 'mongodb://db:27017/testdb';
+const { MONGO_URL } = keys;
 
 mongoose.connect(
   MONGO_URL,
